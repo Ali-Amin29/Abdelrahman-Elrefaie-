@@ -42,7 +42,7 @@ class BlogController extends Controller
            $img=time(). '.' .$request->img->extension();
            $request->img->move(public_path('BLog'),$img);
         }
-        
+
         $games=Blog::create([
             'title'=>$request['title'],
             'content'=>$request['content'],
@@ -86,49 +86,25 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $blog=Blog::find($id);
-        
- 
-        if($request->img != ''){        
-            $path = public_path().'/Blog/';
-             
-             
-  
-            //code for remove old file
-            if($blog->img != ''  && $blog->img != null){
-                 
-                 $file_old = $path.$blog->img;
-
-                 $ahmed=public_path()."/Blog/1671045168.jpg";
-                 unlink($ahmed);
-                //  unlink(public_path()."/1671045168.jpg");
-
-
-                  dd($file_old);
-                 unlink($file_old);
-            }
-  
-            //upload new file
-            $file = $request->file;
-            $filename = $file->getClientOriginalName();
-            $file->move($path, $filename);
-  
-            //for update in table
-            $employee->update(['file' => $filename]);
-       }
-  
 
 
 
+        if($request->img == '' || $request->img== null)
+        {
+           $img=$blog->img;
+        }
+        else{
 
+            $img=time(). '.' .$request->img->extension();
+            $request->img->move(public_path('BLog'),$img);
 
-
-
+        }
 
         $blog->update([
 
             'title'=>$request['title'],
             'content'=>$request['content'],
-            'img'=>$request['content'],
+            'img'=>$img,
             'link'=>$request['link'],
 
         ]);
