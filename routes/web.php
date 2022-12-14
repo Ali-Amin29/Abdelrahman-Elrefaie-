@@ -22,6 +22,25 @@ Route::get('index',function(){
 
 
 
+Route::get('/teams',function(){
+    return view('Dashbord/team/index');
+})->name('index');
+
+Route::get('/teams/create',function(){
+    return view('Dashbord/team/create');
+})->name('teams.create');
+Route::get('/teams/{id}',function($id){
+
+    return app\Models\Team::find($id);
+    // view('Dashbord/team/show');
+})->name('teams.show');
+Route::get('/teams/update',function(){
+    return view('Dashbord/team/update');
+})->name('teams.update');
+
+
+
+
 
 Route::get('rtl', function () {
     return view('Dashbord.index2');
