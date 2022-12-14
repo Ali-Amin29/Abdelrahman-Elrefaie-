@@ -3,7 +3,7 @@
 <!-- Carousel Start -->
 <!-- Slider -->
 
-<
+
 <div class="slider">
    <div class="slide"
       style="background-image: url({{ asset('img/first.jpg') }});">
@@ -384,18 +384,12 @@
             <h2>الاحدث من صفحة الاخبار </h2>
         </div>
         <div class="owl-carousel blog-carousel">
-
-            {{-- @foreach ($posts as $post )
+ @foreach ($blog   as $post )
 
             <div class="blog-item">
                 <div class="blog-img">
-                    @php
-                    $name_img = $post->img;
-                    $name_img_res = Str::between($name_img, ':"', '","');
-                    $res_date = Str::between($name_img_res, '\\' , '\\' );
-                    $res_name_last = Str::afterLast($name_img_res, '\\');
-                     @endphp
-                    <img src={{ asset('storage/article/'.$res_date .'/'. $res_name_last) }} alt="ali" />
+                
+                     <img src="{{ asset('BLog/'.$post->img) }}" alt="ali" />
                 </div>
                 <div class="blog-content">
                     <h2 class="blog-title">{{ $post->title }}</h2>
@@ -409,24 +403,26 @@
                         
                         ?>
                     </div>
-                    <div class="blog-text">
+                    <div class="blog-text" style="height:80px;overflow:hidden">
                         <p>
                             @php
-                            $str=substr($post->content, 0, 200);
+                         echo   $str=substr($post->content, 0, 200);
                             @endphp
                             {{ $str."......"}}
                             </a>
                         </p>
-
-                        <a class="btn " href="{{ url('blog_show',$post->id) }}">المزيد</a>
-                    </div>
+<br>
+</div>
+   
+           <a class="btn " href="{{ url('show_blog',$post->id) }}">المزيد</a>
+                    
                 </div>
             </div>
-            @endforeach --}}
+            @endforeach 
 
 
         </div>
     </div>
 </div>
 <!-- Blog End -->
-{{-- @stop --}}
+ @stop 

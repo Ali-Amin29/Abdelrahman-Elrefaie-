@@ -10,7 +10,7 @@
                 <a href={{ URL::route('index') }} class="nav-item nav-link">الرئيسية</a>
                 <a href={{ URL::route('index') }} class="nav-item nav-link">نبذة عن المكتب</a>
                 <a href={{ URL::route('index') }} class="nav-item nav-link">خدمتنا</a>
-                <a href={{ URL::route('index') }} class="nav-item nav-link">المدونة</a>
+                <a href={{ URL::route('blog') }} class="nav-item nav-link">المدونة</a>
                 <a href={{ URL::route('index') }} class="nav-item nav-link">اتصل بنا</a>
             </div>
         </div>
