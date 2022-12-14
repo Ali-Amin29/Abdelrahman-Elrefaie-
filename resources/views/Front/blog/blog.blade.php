@@ -26,24 +26,25 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 col">
                         <div class="blog-wrap mb-30">
                             <div class="blog-img">
-                                 @php
+                                 {{-- @php
                                     $name_img = $blog->img;
                                     $name_img_res = Str::between($name_img, ':"', '","');
                                     $res_date = Str::between($name_img_res, '\\' , '\\' );
                                     $res_name_last = Str::afterLast($name_img_res, '\\');
-                                @endphp
-                                <img src={{ asset('storage/article/'.$res_date .'/'. $res_name_last) }} alt="ali" />
+                                @endphp --}}
+                                <img src="{{ asset('BLog/'.$blog->img) }}" alt="ali" />
                             </div>
                             <div class="blog-content wow fadeInUp">
+    
                                 <h3>
-                                    <a href="{{ route('blog_show', $blog->id) }}">
+                                    <a href="">
                                     @php
-                                    $str=substr($blog->content, 0, 200);
+                                  echo  $str=substr($blog->content, 0, 200);
                                     @endphp
                                     {{ $str."......"}}
                                     </a>
                                 </h3>
-                                <form action="{{ route('blog_show', $blog->id) }}" method="get">
+                                <form action="{{ route('show_blog',$blog->id) }}" method="get">
                                     <button class="btn btn-default btn_font_16" type="submit">المزيد</button>
                                 </form>
 
@@ -52,8 +53,8 @@
                     </div>
                     @endforeach
             </div>
-            <div class="paginate mt-5 mx-auto">
-                {{ $blogs->links() }}
+            {{-- <div class="paginate mt-5 mx-auto">
+                {{ $blogs->link }}
             </div>
             <div class="blog">
                 <div class="container ">
@@ -96,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
