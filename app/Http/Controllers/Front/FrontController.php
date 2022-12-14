@@ -13,15 +13,13 @@ class FrontController extends Controller
      public function index()
      {
           $blog=Blog::get();
-          
           return view('welcome',compact('blog'));
-
      }
 
      public function Blog()
      {
           $blogs=Blog::get();
-          
+
           return view('Front.blog.blog',compact('blogs'));
      }
 
