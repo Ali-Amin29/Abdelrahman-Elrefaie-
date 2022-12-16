@@ -13,25 +13,13 @@
            <p>الصفحه الرئيسيه</p>
          </a>
        </li>
-       <li class="nav-item">
-         <a href="./index2.html" class="nav-link">
-           <i class="far fa-circle nav-icon"></i>
-           <p>Dashboard v2</p>
-         </a>
-       </li>
-       <li class="nav-item">
-         <a href="./index3.html" class="nav-link">
-           <i class="far fa-circle nav-icon"></i>
-           <p>Dashboard v3</p>
-         </a>
-       </li>
      </ul>
    </li>
- 
- 
+
+{{--   المقالات  --}}
    <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
-      <i class="fa-solid fa-folder-open"></i>   
+      <i class="fa-solid fa-folder-open"></i>
          <p>
         المقالات
         <i class="right fas fa-angle-left"></i>
@@ -50,14 +38,57 @@
           <p> اضافه مقال جديد</p>
         </a>
       </li>
+    </ul>
+  </li>
+
+
+
+
+  {{--  الشكوي  --}}
+     <li class="nav-item menu-open">
+    <a href="#" class="nav-link active">
+      <i class="fa-solid fa-folder-open"></i>
+         <p>
+        الشكوي
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="./index3.html" class="nav-link">
-          <i class="far fa-home nav-icon"></i>
-          <p> تعديل المقال</p>
+        <a href="{{ URL('admin/complain') }}" class="nav-link active">
+          <i class="far fa-circle nav-icon"></i>
+          <p>  كل الشكوي </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ URL('admin/complain/done') }}" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p> الشكوي التي تم الرد عليها </p>
         </a>
       </li>
     </ul>
   </li>
 
 
-    
+
+{{--  الاستشارات  --}}
+<li class="nav-item menu-open">
+    <a href="#" class="nav-link active">
+      <i class="fa-solid fa-folder-open"></i>
+         <p>
+        الاستشارات
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="{{ URL('admin/consultant') }}" class="nav-link active">
+          <i class="far fa-circle nav-icon"></i>
+          <p>  كل الاستشارات </p>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
+

@@ -1,15 +1,26 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '02738224b41b95f72e6daf7ea3a40e66ddd6112b',
+
+
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'ea832366d020c5c3494e340b83e8095273be9eb7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'alaaelsaid/laravel-urway-payment' => array(
+            'pretty_version' => '1.2',
+            'version' => '1.2.0.0',
+            'reference' => '42b1b6c9949fc6941deaa0bb7374c5e2d6d511b2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../alaaelsaid/laravel-urway-payment',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.10.2',
             'version' => '0.10.2.0',
@@ -365,9 +376,11 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '02738224b41b95f72e6daf7ea3a40e66ddd6112b',
+
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'ea832366d020c5c3494e340b83e8095273be9eb7',
+
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

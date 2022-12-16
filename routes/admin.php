@@ -19,8 +19,21 @@ use App\Http\Controllers\Admin\BlogController;
  });
 
 
-
 Route::resource('blog', BlogController::class);
+
+
+
+Route::get('complain',  [App\Http\Controllers\UserComplainController::class,'show'])->name('index.complain');
+Route::get('complain/done',  [App\Http\Controllers\UserComplainController::class,'done'])->name('done');
+Route::get('complain/edit/{id}',  [App\Http\Controllers\UserComplainController::class,'edit'])->name('complain.edit');
+Route::put('complain/udpate/{id}',  [App\Http\Controllers\UserComplainController::class,'update'])->name('complain.update');
+
+
+Route::get('consultant',  [App\Http\Controllers\UserConstultantController::class,'show']);
+
+
+
+
 
 
 Auth::routes();

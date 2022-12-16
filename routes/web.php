@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +16,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('index',function(){
-    return view('welcome');
-})->name('index');
+Route::get('/',[FrontController::class,'index'])->name('index');
+
+// ///////////////////////////////FRONT HOME////////////////////////////////////
+
+// blog routes
+Route::get('blog',[FrontController::class,'Blog'])->name('blog');
+Route::get('show_blog/{id}',[FrontController::class,'show_blog'])->name('show_blog');
+// constultant
+
+Route::get('about', function () {
+    return view('about');
+})->name('about');
+
+// constultant
+Route::get('contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('delete/{id}', [CartController::class, 'delete'])->name('delete');
+Route::get('cart', [CartController::class, 'cart'])->name('cart');
+Route::get('session', [CartController::class, 'session'])->name('session');
+Route::get('session_done', [CartController::class, 'session_done'])->name('session_done');
+Route::get('paymentSend', [App\Http\Controllers\PaymentController::class,'payment'])->name('paymentSend');
+
+
+
+Route::get('getData',  [App\Http\Controllers\UserConstultantController::class,'create']);
+
+
+Route::post('complain',  [App\Http\Controllers\UserComplainController::class,'create'])->name('complain');
+
+
+
+
+
+// ///////////////////////////////FRONT HOME////////////////////////////////////
+
+
+
+
+
+
+
+
+
 
 
 

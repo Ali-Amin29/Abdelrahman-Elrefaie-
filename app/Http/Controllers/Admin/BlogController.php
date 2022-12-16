@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs=Blog::get();
-        return view('Dashbord.blog.index');
+        return view('Dashbord.blog.index',compact('blogs'));
     }
 
     /**
@@ -37,7 +37,19 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->img)
+        {
+           $img=time(). '.' .$request->img->extension();
+           $request->img->move(public_path('BLog'),$img);
+        }
+
+        $games=Blog::create([
+            'title'=>$request['title'],
+            'content'=>$request['content'],
+            'img'=>$img,
+            'link'=>$request['link'],
+         ]);
+        return redirect()->route('blog.index')->with('success','تم اضافه المقال بنجاح');
     }
 
     /**
@@ -48,7 +60,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog=Blog::find($id);
+        return view('Dashbord.blog.show',compact('blog'));
     }
 
     /**
@@ -59,7 +72,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog=Blog::find($id);
+        return view('Dashbord.blog.update',compact('blog'));
     }
 
     /**
@@ -71,7 +85,25 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog=Blog::find($id);
+
+        if($request->img == '' || $request->img== null)
+        {
+           $img=$blog->img;
+        }
+        else{
+
+            $img=time(). '.' .$request->img->extension();
+            $request->img->move(public_path('BLog'),$img);
+        }
+
+        $blog->update([
+            'title'=>$request['title'],
+            'content'=>$request['content'],
+            'img'=>$img,
+            'link'=>$request['link'],
+        ]);
+        return redirect()->route('blog.index')->with('success','تم تعديل المقال بنجاح');
     }
 
     /**
@@ -82,6 +114,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog=Blog::find($id);
+        $blog->delete();
+        return redirect()->route('blog.index')->with('success','تم حذف المقال بنجاح');
     }
 }

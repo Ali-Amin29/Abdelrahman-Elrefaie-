@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ba018504126670e19bad74bfd50b7dc",
+    "content-hash": "039e70e8f461c109dc47e1a3fd8a23a3",
     "packages": [
+        {
+            "name": "alaaelsaid/laravel-urway-payment",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alaaels3id/Laravel-Urway-Payment.git",
+                "reference": "42b1b6c9949fc6941deaa0bb7374c5e2d6d511b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alaaels3id/Laravel-Urway-Payment/zipball/42b1b6c9949fc6941deaa0bb7374c5e2d6d511b2",
+                "reference": "42b1b6c9949fc6941deaa0bb7374c5e2d6d511b2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Alaaelsaid\\LaravelUrwayPayment\\Providers\\UrwayServiceProvider"
+                    ],
+                    "aliases": {
+                        "Urway": "Alaaelsaid\\LaravelUrwayPayment\\Facade\\Urway"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Alaaelsaid\\LaravelUrwayPayment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alaa Elsaid",
+                    "email": "alaa4cat@gmail.com"
+                }
+            ],
+            "description": "This package is to integrate with URWay payment",
+            "keywords": [
+                "payment",
+                "urway"
+            ],
+            "support": {
+                "issues": "https://github.com/alaaels3id/Laravel-Urway-Payment/issues",
+                "source": "https://github.com/alaaels3id/Laravel-Urway-Payment/tree/1.2"
+            },
+            "time": "2022-01-24T12:16:20+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.10.2",
