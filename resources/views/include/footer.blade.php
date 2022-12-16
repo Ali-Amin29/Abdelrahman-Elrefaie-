@@ -34,8 +34,8 @@
                                 <div class="contact-form">
                                     <div id="success"></div>
                                     {{-- --------------------------- --}}
-                                    <form method="post" 
-                                    action="{{ route('index') }}" name="sentMessage" id="contactForm" novalidate="novalidate">
+                                    <form method="post"
+                                    action="{{ route('complain') }}" name="sentMessage" id="contactForm" novalidate="novalidate">
                                         @csrf
                                         <div class="control-group">
                                             <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
@@ -46,7 +46,7 @@
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="control-group">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="control-group">

@@ -55,15 +55,15 @@
     </a>
     <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="{{ URL('admin/blog') }}" class="nav-link active">
+        <a href="{{ URL('admin/complain') }}" class="nav-link active">
           <i class="far fa-circle nav-icon"></i>
           <p>  كل الشكوي </p>
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{ URL('admin/blog/create') }}" class="nav-link">
+        <a href="{{ URL('admin/complain/done') }}" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
-          <p> اضافه مقال جديد</p>
+          <p> الشكوي التي تم الرد عليها </p>
         </a>
       </li>
     </ul>
