@@ -29,4 +29,9 @@ class UserConstultantController extends Controller
 
 
 }
+public function show()
+{
+        $constultant = UserConstultant::get();
+        return view('Dashbord.consultant.index', compact('constultant'));
+}
 }
