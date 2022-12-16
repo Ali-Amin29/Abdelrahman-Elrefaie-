@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto size-edit">
                 <a href={{ URL::route('index') }} class="nav-item nav-link">الرئيسية</a>
-                <a href={{ URL::route('index') }} class="nav-item nav-link">نبذة عن المكتب</a>
-                <a href={{ URL::route('index') }} class="nav-item nav-link">خدمتنا</a>
+                <a href={{ URL::route('about') }} class="nav-item nav-link">نبذة عن المكتب</a>
+                {{--  <a href={{ URL::route('service') }} class="nav-item nav-link">خدمتنا</a>  --}}
                 <a href={{ URL::route('blog') }} class="nav-item nav-link">المدونة</a>
-                <a href={{ URL::route('index') }} class="nav-item nav-link">اتصل بنا</a>
+                <a href={{ URL::route('contact') }} class="nav-item nav-link">الاستشارات</a>
             </div>
         </div>
             <a href={{ URL::route('index') }} class="navbar-brand">

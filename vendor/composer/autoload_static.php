@@ -168,6 +168,7 @@ class ComposerStaticInit54f7d9d45baac9a22d2454e7408a6088
         'A' => 
         array (
             'App\\' => 4,
+            'Alaaelsaid\\LaravelUrwayPayment\\' => 31,
         ),
     );
 
@@ -502,6 +503,10 @@ class ComposerStaticInit54f7d9d45baac9a22d2454e7408a6088
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
+        'Alaaelsaid\\LaravelUrwayPayment\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alaaelsaid/laravel-urway-payment/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -515,6 +520,9 @@ class ComposerStaticInit54f7d9d45baac9a22d2454e7408a6088
     );
 
     public static $classMap = array (
+        'Alaaelsaid\\LaravelUrwayPayment\\Facade\\Urway' => __DIR__ . '/..' . '/alaaelsaid/laravel-urway-payment/src/Facade/Urway.php',
+        'Alaaelsaid\\LaravelUrwayPayment\\Facade\\UrwayProcess' => __DIR__ . '/..' . '/alaaelsaid/laravel-urway-payment/src/Facade/UrwayProcess.php',
+        'Alaaelsaid\\LaravelUrwayPayment\\Providers\\UrwayServiceProvider' => __DIR__ . '/..' . '/alaaelsaid/laravel-urway-payment/src/Providers/UrwayServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BlogController.php',
@@ -524,9 +532,13 @@ class ComposerStaticInit54f7d9d45baac9a22d2454e7408a6088
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Front\\FrontController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/FrontController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentController.php',
+        'App\\Http\\Controllers\\UserComplainController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserComplainController.php',
+        'App\\Http\\Controllers\\UserConstultantController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserConstultantController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -539,6 +551,8 @@ class ComposerStaticInit54f7d9d45baac9a22d2454e7408a6088
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\UserComplain' => __DIR__ . '/../..' . '/app/Models/UserComplain.php',
+        'App\\Models\\UserConstultant' => __DIR__ . '/../..' . '/app/Models/UserConstultant.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
