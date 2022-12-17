@@ -42,7 +42,6 @@ class UserComplainController extends Controller
             ]);
             $complain->save();
             return redirect()->route('index')->with('success','تم الرد علي الشكوي بنجاح');
-
     }
     public function edit($id)
     {

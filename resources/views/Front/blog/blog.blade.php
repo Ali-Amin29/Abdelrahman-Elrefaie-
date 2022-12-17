@@ -35,7 +35,7 @@
                                 <img src="{{ asset('BLog/'.$blog->img) }}" alt="ali" />
                             </div>
                             <div class="blog-content wow fadeInUp">
-    
+
                                 <h3>
                                     <a href="">
                                     @php
@@ -53,8 +53,8 @@
                     </div>
                     @endforeach
             </div>
-            {{-- <div class="paginate mt-5 mx-auto">
-                {{ $blogs->link }}
+            <div class="paginate mt-5 mx-auto">
+                {{ $blog->link }}
             </div>
             <div class="blog">
                 <div class="container ">
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>

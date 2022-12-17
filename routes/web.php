@@ -21,8 +21,12 @@ Route::get('/',[FrontController::class,'index'])->name('index');
 // ///////////////////////////////FRONT HOME////////////////////////////////////
 
 // blog routes
-Route::get('blog',[FrontController::class,'Blog'])->name('blog');
+Route::get('blogs',[FrontController::class,'Blog'])->name('blogs');
+
+
 Route::get('show_blog/{id}',[FrontController::class,'show_blog'])->name('show_blog');
+Route::get('team_show/{id}',[FrontController::class,'team_show'])->name('team_show');
+
 // constultant
 
 Route::get('about', function () {
@@ -47,6 +51,10 @@ Route::get('getData',  [App\Http\Controllers\UserConstultantController::class,'c
 Route::post('complain',  [App\Http\Controllers\UserComplainController::class,'create'])->name('complain');
 
 
+Route::get('/register',function(){
+
+    return "kjhkl";
+});
 
 
 
@@ -63,29 +71,13 @@ Route::post('complain',  [App\Http\Controllers\UserComplainController::class,'cr
 
 
 
-Route::get('/teams',function(){
-    return view('Dashbord/team/index');
-})->name('index');
-
-Route::get('/teams/create',function(){
-    return view('Dashbord/team/create');
-})->name('teams.create');
-Route::get('/teams/{id}',function($id){
-
-    return app\Models\Team::find($id);
-    // view('Dashbord/team/show');
-})->name('teams.show');
-Route::get('/teams/update',function(){
-    return view('Dashbord/team/update');
-})->name('teams.update');
 
 
 
 
 
-Route::get('rtl', function () {
-    return view('Dashbord.index2');
-});
+
+
 
 Route::view('admin', 'Dashbord.index');
 

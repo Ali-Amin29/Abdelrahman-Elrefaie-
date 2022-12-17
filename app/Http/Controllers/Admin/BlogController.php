@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs=Blog::get();
+        $blogs=Blog::paginate(2);
         return view('Dashbord.blog.index',compact('blogs'));
     }
 
@@ -42,7 +42,7 @@ class BlogController extends Controller
            $img=time(). '.' .$request->img->extension();
            $request->img->move(public_path('BLog'),$img);
         }
-
+        
         $games=Blog::create([
             'title'=>$request['title'],
             'content'=>$request['content'],
@@ -87,23 +87,42 @@ class BlogController extends Controller
     {
         $blog=Blog::find($id);
 
+      
+        
+
+
         if($request->img == '' || $request->img== null)
         {
            $img=$blog->img;
+
         }
         else{
 
             $img=time(). '.' .$request->img->extension();
             $request->img->move(public_path('BLog'),$img);
+
+         
+
+
         }
 
+
+
+
+
+
+
         $blog->update([
+
             'title'=>$request['title'],
             'content'=>$request['content'],
             'img'=>$img,
             'link'=>$request['link'],
+
         ]);
         return redirect()->route('blog.index')->with('success','تم تعديل المقال بنجاح');
+
+
     }
 
     /**

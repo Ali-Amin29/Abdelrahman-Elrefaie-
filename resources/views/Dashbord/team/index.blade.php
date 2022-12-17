@@ -1,56 +1,78 @@
 @extends('Dashbord.layout.master')
+@section('name')
+فريق العمل 
+<i class="fa-solid fa-users"></i>
+@endsection
 @section('content')
+
+@if(session()->has('success')) 
+ 
+<div class="alert alert-success">
+   {{ session()->get('success') }} </div>
+ @endif
 
 <div class="table-responsive">
      <table class="table">
        <thead>
          <tr>
            <th scope="col">#</th>
-           <th scope="col">العضو</th>
-           <th scope="col">المؤهل</th>
+           <th scope="col">الاسم</th>
+           <th scope="col">النوع</th>
+           <th scope="col">الميلاد</th>
            <th scope="col">الصوره</th>
 
-
+           
            <th scope="col">معاينه</th>
            <th scope="col">تعديل</th>
            <th scope="col">حذف</th>
-
+           
          </tr>
        </thead>
        <tbody>
+        @foreach ($teams as $team)
+          
+      
          <tr>
-           <th scope="row">1</th>
-           <td>حسن</td>
-           <td>نقاش خبير</td>
-           <td><img src="{{ asset('Dashbord/dist/img/user2-160x160.jpg') }}"        style="width:100%;height:100px"alt="">
+           <th scope="row">{{ $team->id }}</th>
+           <td> {{ $team->title }} </td>
+          <td>{{ $team->title }}</td>
+          <td>{{ $team->birth }}</td>
+           <td><img src="{{ asset('Team/'.$team->img) }}"style="width:130px;height:120px;object-fit:containe; "alt="">
           </td>
-
+         
            {{-- ------------------------------SHOW--------------- --}}
            <td>
-               <form action="{{ route('blog.index') }}" method="get">
-               <button class="btn btn-warning">عرض</button>
+               <form action="{{ route('team.show',$team->id) }}" method="get">
+               <button class="btn btn-warning">معاينه</button>
                </form>
            </td>
                       {{-- ------------------------------UPDATE--------------- --}}
 
            <td>
-               <form action="{{ route('blog.index') }}" method="get">
-               <button class="btn btn-primary">عرض</button>
+               <form action="{{ route('team.edit',$team->id) }}" method="get">
+               <button class="btn btn-primary">تعديل</button>
                </form>
            </td>
                       {{-- ------------------------------DELETE--------------- --}}
 
                       <td>
-                         <form action="{{ route('blog.index') }}" method="get">
-                         <button class="btn btn-danger">عرض</button>
+                         <form action="{{ route('team.destroy',$team->id) }}" method="post">
+                          @csrf
+                          {{ method_field('DELETE') }}
+                         <button class="btn btn-danger">حذف</button>
                          </form>
                      </td>
-
+                
          </tr>
-
-
+         <div class="paginate mt-5 m-auto">
+     
+    </div>
+         @endforeach
+          
+      
        </tbody>
      </table>
+
    </div>
 
 

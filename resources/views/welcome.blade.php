@@ -349,15 +349,14 @@
             <h2>فريق العمل</h2>
         </div>
         <div class="row">
-            {{-- @foreach ($teams as $team )
+            @foreach ($teams as $team )
             <div class="col-lg-3 col-md-6">
                 <div class="team-item">
                     <div class="team-img">
 
-                  
-                      <img src={{ asset('app/'.$team->img) }} alt="Image" width="100px" height="180px" style="object-fit: contain">
+
+                      <img src={{ asset('Team/'.$team->img) }} alt="Image" width="100px" height="180px" style="object-fit: contain">
                       @php
-                         
 
                       @endphp
                     </div>
@@ -370,7 +369,7 @@
                     </div>
                 </div>
             </div>
-            @endforeach --}}
+            @endforeach
 
         </div>
     </div>
@@ -388,7 +387,7 @@
 
             <div class="blog-item">
                 <div class="blog-img">
-                
+
                      <img src="{{ asset('BLog/'.$post->img) }}" alt="ali" />
                 </div>
                 <div class="blog-content">
@@ -400,7 +399,7 @@
                    <?php
                         // $x=(explode(" ",$post->created_at));
                         // echo $x[0];
-                        
+
                         ?>
                     </div>
                     <div class="blog-text" style="height:80px;overflow:hidden">
@@ -413,16 +412,16 @@
                         </p>
 <br>
 </div>
-   
+
            <a class="btn " href="{{ url('show_blog',$post->id) }}">المزيد</a>
-                    
+
                 </div>
             </div>
-            @endforeach 
+            @endforeach
 
 
         </div>
     </div>
 </div>
 <!-- Blog End -->
- @stop 
+ @stop

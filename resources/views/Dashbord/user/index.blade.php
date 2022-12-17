@@ -1,13 +1,23 @@
 @extends('Dashbord.layout.master')
+@section('name')
+ ادامن الموقع 
+<i class="fa-solid fa-user"></i>
+@endsection
 @section('content')
+
+@if(session()->has('success')) 
+ 
+<div class="alert alert-success">
+   {{ session()->get('success') }} </div>
+ @endif
 
 <div class="table-responsive">
      <table class="table">
        <thead>
          <tr>
            <th scope="col">#</th>
-           <th scope="col">العنوان</th>
-           <th scope="col">المحتوي</th>
+           <th scope="col">الاسم</th>
+           <th scope="col">الاميل</th>
            <th scope="col">الصوره</th>
 
            
@@ -18,39 +28,51 @@
          </tr>
        </thead>
        <tbody>
+        @foreach ($Users as $user)
+          
+      
          <tr>
-           <th scope="row">1</th>
-           <td>مقال عن الخلاصه</td>
-           <td>Lorem ipsum dolor sit amet.</td>
-           <td><img src="{{ asset('Dashbord/dist/img/user2-160x160.jpg') }}"        style="width:100%;height:100px"alt="">
+           <th scope="row">{{ $user->id }}</th>
+           <td> {{ $user->name }} </td>
+           <td> {{ $user->email }} </td>
+           
+          
+           <td><img src="{{ asset('User/'.$user->img) }}"style="width:130px;height:120px;object-fit:containe; "alt="">
           </td>
          
            {{-- ------------------------------SHOW--------------- --}}
            <td>
-               <form action="{{ route('blog.index') }}" method="get">
-               <button class="btn btn-warning">عرض</button>
+               <form action="{{ route('user.show',$user->id) }}" method="get">
+               <button class="btn btn-warning">معاينه</button>
                </form>
            </td>
                       {{-- ------------------------------UPDATE--------------- --}}
 
            <td>
-               <form action="{{ route('blog.index') }}" method="get">
-               <button class="btn btn-primary">عرض</button>
+               <form action="{{ route('user.edit',$user->id) }}" method="get">
+               <button class="btn btn-primary">تعديل</button>
                </form>
            </td>
                       {{-- ------------------------------DELETE--------------- --}}
 
                       <td>
-                         <form action="{{ route('blog.index') }}" method="get">
-                         <button class="btn btn-danger">عرض</button>
+                         <form action="{{ route('user.destroy',$user->id) }}" method="post">
+                          @csrf
+                          {{ method_field('DELETE') }}
+                         <button class="btn btn-danger">حذف</button>
                          </form>
                      </td>
          
          </tr>
+         @endforeach
           
       
        </tbody>
      </table>
+     <div class="paginate mt-5 m-auto">
+      
+ 
+</div>
    </div>
 
 

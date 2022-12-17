@@ -58,7 +58,7 @@ class PaymentController extends Controller
            'udf5'=>$email,
            'udf1'=>$name,
            "udf3"=>$type,
-           'redirect_url' =>'http://update-12-14.test/api/getData', // put your redirect url here, feel free to use url() method,
+           'redirect_url' =>'http://update-12-14.test/getData', // put your redirect url here, feel free to use url() method,
        ]);
        return redirect($payment_url); // this is for example !!
        }
