@@ -53,9 +53,9 @@
                     </div>
                     @endforeach
             </div>
-            <div class="paginate mt-5 mx-auto">
-                {{ $blog->link }}
-            </div>
+            <div class="paginate mt-5 m-auto">
+                {{ $blogs->links() }}
+          </div>
             <div class="blog">
                 <div class="container ">
                     <div class="section-header">

@@ -1,12 +1,12 @@
 @extends('Dashbord.layout.master')
 @section('name')
-المقالات 
+المقالات
 <i class="fa-solid fa-book-medical"></i>
 @endsection
 @section('content')
 
-@if(session()->has('success')) 
- 
+@if(session()->has('success'))
+
 <div class="alert alert-success">
    {{ session()->get('success') }} </div>
  @endif
@@ -20,17 +20,17 @@
            <th scope="col">المحتوي</th>
            <th scope="col">الصوره</th>
 
-           
+
            <th scope="col">معاينه</th>
            <th scope="col">تعديل</th>
            <th scope="col">حذف</th>
-           
+
          </tr>
        </thead>
        <tbody>
         @foreach ($blogs as $blog)
-          
-      
+
+
          <tr>
            <th scope="row">{{ $blog->id }}</th>
            <td> {{ $blog->title }} </td>
@@ -41,7 +41,7 @@
           </td>
            <td><img src="{{ asset('BLog/'.$blog->img) }}"style="width:130px;height:120px;object-fit:containe; "alt="">
           </td>
-         
+
            {{-- ------------------------------SHOW--------------- --}}
            <td>
                <form action="{{ route('blog.show',$blog->id) }}" method="get">
@@ -64,18 +64,15 @@
                          <button class="btn btn-danger">حذف</button>
                          </form>
                      </td>
-         
+
          </tr>
- 
+
          @endforeach
- 
+
        </tbody>
      </table>
-     <div class="paginate mt-5 m-auto">
-      {{ $blogs->links() }}
- 
-</div>
-  
+
+
    </div>
 
 
